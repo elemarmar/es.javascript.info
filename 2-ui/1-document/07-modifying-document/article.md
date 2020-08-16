@@ -1,14 +1,14 @@
-# Modifying the document
+# Modificar el documento
 
-DOM modification is the key to creating "live" pages.
+La modificación del DOM es la clave para crear páginas "vivas / en vivo (live pages)". ??? 
 
-Here we'll see how to create new elements "on the fly" and modify the existing page content.
+Aquí veremos cómo crear nuevos elementos "sobre la marcha" y modificar el contenido de la página existente.
 
-## Example: show a message
+## Ejemplo: mostrar un mensaje
 
-Let's demonstrate using an example. We'll add a message on the page that looks nicer than `alert`.
+Vamos a demostrarlo con un ejemplo. Añadiremos un mensaje en la página que se vea mejor que un `alert`.
 
-Here's how it will look:
+Así es cómo se verá:
 
 ```html autorun height="80"
 <style>
@@ -23,47 +23,47 @@ Here's how it will look:
 
 *!*
 <div class="alert">
-  <strong>Hi there!</strong> You've read an important message.
+  <strong>¡Hola!</strong> Has leído un mensaje importante.
 </div>
 */!*
 ```
 
-That was the HTML example. Now let's create the same `div` with JavaScript (assuming that the styles are in the HTML/CSS already).
+Ese fue el ejemplo del HTML. NAhora vamos a crear el mismo `div` con JavaScript (asumiendo que los estilos ya están en el HTML/CSS).
 
-## Creating an element
+## Crear un elemento
 
-To create DOM nodes, there are two methods:
+Para crear nodos en el DOM, existen dos métodos:
 
 `document.createElement(tag)`
-: Creates a new *element node* with the given tag:
+: Crea un nuevo *nodo de elemento* con la etiqueta dada:
 
     ```js
     let div = document.createElement('div');
     ```
 
 `document.createTextNode(text)`
-: Creates a new *text node* with the given text:
+: Crea un nuevo *nodo de texto* con el texto dado:
 
     ```js
     let textNode = document.createTextNode('Here I am');
     ```
 
-Most of the time we need to create element nodes, such as the `div` for the message.
+La mayoría de las veces necesitamos crear nodos de elementos, como el `div`del mensaje.
 
-### Creating the message
+### Crear el mensaje
 
-Creating the message div takes 3 steps:
+La creación del mensaje div conlleva 3 pasos:
 
 ```js
-// 1. Create <div> element
+// 1. Crear el elemento <div> 
 let div = document.createElement('div');
-// 2. Set its class to "alert"
+// 2. Asignarle la clase "alert"
 div.className = "alert";
-// Fill it with the content
-div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+// Llenarlo con el contenido
+div.innerHTML = "<strong>¡Hola!</strong> Has leído un mensaje importante.";
 ```
 
-We've created the element. But as of now it's only in a variable named `div`, not in the page yet. So we can't see it.
+Hemos creado el elemento. Pero por ahora sólo está en una variable llamada `div`, no en la página todavía. Así que no podemos verlo. 
 
 ## Insertion methods
 

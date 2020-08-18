@@ -1,6 +1,6 @@
 # Modificar el documento
 
-La modificación del DOM es la clave para crear páginas "vivas / en vivo (live pages)". ??? 
+La modificación del DOM es la clave para crear páginas "vivas".
 
 Aquí veremos cómo crear nuevos elementos "sobre la marcha" y modificar el contenido de la página existente.
 
@@ -65,13 +65,13 @@ div.innerHTML = "<strong>¡Hola!</strong> Has leído un mensaje importante.";
 
 Hemos creado el elemento. Pero por ahora sólo está en una variable llamada `div`, no en la página todavía. Así que no podemos verlo. 
 
-## Insertion methods
+## Métodos de inserción
 
-To make the `div` show up, we need to insert it somewhere into `document`. For instance, into `<body>` element, referenced by `document.body`.
+Para que el `div` aparezca, necesitamos insertarlo en algún lugar del `document`. Por ejemplo, en el elemento `<body>`, referenciado por `document.body`.
 
-There's a special method `append` for that: `document.body.append(div)`.
+Existe un método especial `append` para ello: `document.body.append(div)`.
 
-Here's the full code:
+Aquí está el código completo:
 
 ```html run height="80"
 <style>
@@ -87,7 +87,7 @@ Here's the full code:
 <script>
   let div = document.createElement('div');
   div.className = "alert";
-  div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
+  div.innerHTML = "<strong>¡Hola!</strong> Has leído un mensaje importante.";
 
 *!*
   document.body.append(div);
@@ -95,21 +95,21 @@ Here's the full code:
 </script>
 ```
 
-Here we called `append` on `document.body`, but we can call `append` method on any other element, to put another element into it. For instance, we can append something to `<div>` by calling `div.append(anotherElement)`.
+Aquí llamamos a `append` en el `document.body`, pero podemos llamar al método `append` en cualquier otro elemento, para poner otro elemento en él. Por ejemplo, podemos añadir algo a `<div>` llamando a `div.append(anotherElement)`.
 
-Here are more insertion methods, they specify different places where to insert:
+Aquí hay más métodos de inserción, que especifican diferentes lugares donde insertar:
 
-- `node.append(...nodes or strings)` -- append nodes or strings at the end of `node`,
-- `node.prepend(...nodes or strings)` -- insert nodes or strings at the beginning of `node`,
-- `node.before(...nodes or strings)` –- insert nodes or strings before `node`,
-- `node.after(...nodes or strings)` –- insert nodes or strings after `node`,
-- `node.replaceWith(...nodes or strings)` –- replaces `node` with the given nodes or strings.
+- `node.append(...nodes or strings)` -- agrega nodos o strings al final del `node`,
+- `node.prepend(...nodes or strings)` -- agrega nodos o strings al principio del `node`,
+- `node.before(...nodes or strings)` –- agrega nodos o strings antes del `node`,
+- `node.after(...nodes or strings)` –-agrega nodos o strings después del `node`,
+- `node.replaceWith(...nodes or strings)` –- reemplaza `node` con los nodos o strings dados.
 
-Arguments of these methods are an arbitrary list of DOM nodes to insert, or text strings (that become text nodes automatically).
+Los argumentos de estos métodos son una lista arbitraria de nodos del DOM para insertar, o cadenas de texto (que se convierten en nodos de texto automáticamente).
 
-Let's see them in action.
+Vamos a verlos en acción.
 
-Here's an example of using these methods to add items to a list and the text before/after it:
+Aquí hay un ejemplo de cómo utilizar estos métodos para añadir elementos a una lista y el texto antes/después de ella: 
 
 ```html autorun
 <ol id="ol">
@@ -119,7 +119,7 @@ Here's an example of using these methods to add items to a list and the text bef
 </ol>
 
 <script>
-  ol.before('before'); // insert string "before" before <ol>
+  ol.before('before'); // insertar string "before" before <ol>???
   ol.after('after'); // insert string "after" after <ol>
 
   let liFirst = document.createElement('li');
@@ -132,11 +132,11 @@ Here's an example of using these methods to add items to a list and the text bef
 </script>
 ```
 
-Here's a visual picture of what the methods do:
+Aquí se puede ver una imagen visual de lo que hacen los métodos:
 
 ![](before-prepend-append-after.svg)
 
-So the final list will be:
+Así que la lista final será:
 
 ```html
 before
